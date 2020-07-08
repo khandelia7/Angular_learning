@@ -1,0 +1,30 @@
+<h2 style="text-align:center">LECTURE 5</h2>
+<h4>FORMS</h4>
+<form (submit)="onformSubmit(personForm)" #personForm="ngForm">
+
+    NAME: <div class="form-group w-25">
+        <input type="text" name="name" class="form-control" placeholder="Enter Name" ngModel #name="ngModel" required
+            minlength="3" maxlength="15" pattern="[a-zA-Z]*">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+                <small id="emailHelp" class="form-text text-muted">Name is required</small>
+            </div>
+            <div *ngIf="name.errors.minlength"> 
+                <small id="emailHelp" class="form-text text-muted">Name must be at least 4 characters long.</small>
+            </div>
+            <div *ngIf="name.errors.pattern">
+                <small id="emailHelp" class="form-text text-muted">Name can only have a-z & A-Z</small>
+            </div>        
+        </div>
+    </div>
+
+    Address: <div class="form-group w-25">
+        <input type="text" name="address" class="form-control" placeholder="Enter Address" ngModel>
+    </div>
+
+    Id: <div class="form-group w-25">
+        <input type="text" name="id" class="form-control" placeholder="Enter ID" ngModel>
+    </div>
+
+    <button type="submit" [disabled]="!personForm.valid"  class="btn btn-outline-primary" value="Add Person">ADD PERSON</button>
+</form>

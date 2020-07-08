@@ -1,0 +1,40 @@
+<h2 style="text-align:center">LECTURE 3.1</h2>
+<h4>Variable (instance & local)</h4>
+<h6>x value is {{x}} // instance variable</h6>
+
+<h4>Method (return & no return)</h4>
+<h6>value 15 in console is from myMethodNoReturn() method</h6>
+<h6>value 10 in console is from myMethodReturn() method</h6>
+
+<h4>IF-Else</h4>
+<h6>If-Else: Template - 1</h6>
+<div *ngIf="isPass; else badMsg">
+    GOOD
+</div>
+<ng-template #badMsg>
+    BAD
+</ng-template>
+
+<h6>If-Else: Template - 2</h6>
+<div *ngIf="isPass; then goodMsg else badMsg"></div>
+<ng-template #goodMsg>
+    GOOD
+</ng-template>
+<ng-template #badMsg>
+    BAD
+</ng-template>
+
+<h6>If-Else: Template - 3 (PERFER)</h6>
+<ng-container *ngIf="isPass; then goodMsg else badMsg"></ng-container>
+<ng-template #goodMsg>
+    GOOD
+</ng-template>
+<ng-template #badMsg>
+    BAD
+</ng-template>
+
+<h4>Class objects</h4>
+<h6>value  undefine  in console is from myFirstObject</h6>
+<h6>value blank in console is from mySecondObject</h6>
+<h6>value abcd in console is from myThirdObject</h6>
+<h6>value object in console is from  myFourthObject</h6>

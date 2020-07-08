@@ -1,0 +1,29 @@
+<h2>Cart Info</h2>
+<h4 align="right">
+  <button type="button" class="btn btn-link">
+    <a [routerLink]="['/myshop']">Back to shopping</a>
+  </button>
+</h4>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">COMMENT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cart">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.price}}</td>
+      <td><a (click)="remove(item.id)">Remove</a></td>
+    </tr>
+  </tbody>
+</table>
+<h1 align="center">
+  Total: {{total}}
+</h1>

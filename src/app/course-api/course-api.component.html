@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-sm-4" *ngFor="let c of courses">
+      <div class="card border-dark mb-3">
+        
+        <div class="card-header">{{c.name}}</div>
+        <div class="card-body">
+          <h4 class="card-title">{{c.shortDescription}}</h4>
+          <div class="text-center">
+            <button type="button" 
+            class="btn btn-outline-secondary" 
+            [routerLink]="['/course-info-api/',c.id]">
+            Select Course</button>
+            &nbsp;  &nbsp;  &nbsp; 
+            <button type="button" 
+            class="btn btn-outline-secondary" 
+            (click)="onCourseDelete(c.id)">
+            Delete Course</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<hr>
+<a routerLink="/add-course">Add Course</a>

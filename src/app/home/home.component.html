@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-4">
+        <app-task (taskCreated)="onTaskAdd($event)"> <!-- IMPORTANT -->
+        </app-task>
+    </div>
+    <div class="col-md-8">
+        <app-task-list [tasks_arr]=tasks> <!-- IMPORTANT -->
+        </app-task-list>
+    </div>
+ </div>
+ <hr>

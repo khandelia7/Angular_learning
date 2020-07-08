@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <div class="dropdown-container">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+    
+
+    <button (click)="showFiller = !showFiller">
+      Toggle extra text
+    </button>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <br>
+    <br>
+    <button (click)="showFiller1= !showFiller1" mat-raised-button>
+      Toggle extra text
+    </button>
+    <p *ngIf="showFiller1">Lorem, ipsum dolor sit amet consectetur.</p>
+    
+  </mat-drawer>
+
+  <div>
+    <button type="button" mat-button (click)="drawer.toggle()" class="btn"><i class="fa fa-home"></i></button>
+  </div>
+  <br>
+
+</mat-drawer-container>
